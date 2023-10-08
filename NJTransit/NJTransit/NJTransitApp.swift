@@ -14,6 +14,7 @@ struct NJTransitApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .defaultAppStorage(AppGroupUserDefaults.shared)
         }
     }
 }

@@ -26,12 +26,25 @@ struct Provider: IntentTimelineProvider {
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
+            entries.append(getEntry())
         }
 
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
+    }
+    
+    func getEntry() -> SimpleEntry {
+        let userDefaults = AppGroupUserDefaults.shared
+        let travelFrom = userDefaults.string(forKey: AppGroupUserDefaults.StorageKey.travelFrom)
+        let travelTo = userDefaults.string(forKey: AppGroupUserDefaults.StorageKey.travelTo)
+        let boardingTime = userDefaults.string(forKey: AppGroupUserDefaults.StorageKey.boardingTime)
+        return SimpleEntry(
+            date: Date(),
+            configuration: ConfigurationIntent(),
+            travelFrom: travelFrom,
+            travelTo: travelTo,
+            boardingTime: boardingTime
+        )
     }
 }
 
@@ -39,6 +52,10 @@ struct Provider: IntentTimelineProvider {
 struct SimpleEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationIntent
+    
+    var travelFrom: String?
+    var travelTo: String?
+    var boardingTime: String?
 }
 
 struct NJTransitWidgetEntryView : View {
@@ -94,23 +111,29 @@ struct NJTransitWidgetEntryView : View {
                     .position(x: 320, y: 18)
             }
             Group {
-                Text("need variable here")
-                    .font(.system(size:8))
-                    .multilineTextAlignment(.center)
-                    .frame(width: 60, height: 30)
-                    .position(CGPoint(x: 26.0, y: 102.0))
-                Text("need variable here")
-                    .font(.system(size:8))
-                    .multilineTextAlignment(.center)
-                    .frame(width: 50, height: 30)
-                    .position(CGPoint(x: 330.0, y: 98.0))
-                Text("need variable here")
-                    .font(.system(size:10))
-                    .frame(width: 160, height: 30)
-                    .position(CGPoint(x: 330.0, y: 135.0))
+                if let travelFrom = entry.travelFrom {
+                    Text(travelFrom)
+                        .font(.system(size:8))
+                        .multilineTextAlignment(.center)
+                        .frame(width: 60, height: 30)
+                        .position(CGPoint(x: 26.0, y: 102.0))
+                }
+                if let travelTo = entry.travelTo {
+                    Text(travelTo)
+                        .font(.system(size:8))
+                        .multilineTextAlignment(.center)
+                        .frame(width: 50, height: 30)
+                        .position(CGPoint(x: 330.0, y: 98.0))
+                }
+                if let boardingTime = entry.boardingTime {
+                    Text(boardingTime)
+                        .font(.system(size:10))
+                        .frame(width: 160, height: 30)
+                        .position(CGPoint(x: 330.0, y: 135.0))
+                }
             }
-            }
-                .widgetURL(URL(string: "widget://myWidget"))
+        }
+        .widgetURL(URL(string: "widget://myWidget"))
     }
 }
 

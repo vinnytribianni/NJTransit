@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D908F2D2AD23FED00645943 /* AppGroupUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D908F2C2AD23FED00645943 /* AppGroupUserDefaults.swift */; };
+		1D908F2E2AD23FED00645943 /* AppGroupUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D908F2C2AD23FED00645943 /* AppGroupUserDefaults.swift */; };
 		4334EA7B2AD1C26000A4BB88 /* NJTransitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4334EA7A2AD1C26000A4BB88 /* NJTransitApp.swift */; };
 		4334EA7D2AD1C26000A4BB88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4334EA7C2AD1C26000A4BB88 /* ContentView.swift */; };
 		4334EA7F2AD1C26200A4BB88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4334EA7E2AD1C26200A4BB88 /* Assets.xcassets */; };
@@ -64,6 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D908F2C2AD23FED00645943 /* AppGroupUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroupUserDefaults.swift; sourceTree = "<group>"; };
 		4334EA772AD1C26000A4BB88 /* NJTransit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NJTransit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4334EA7A2AD1C26000A4BB88 /* NJTransitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJTransitApp.swift; sourceTree = "<group>"; };
 		4334EA7C2AD1C26000A4BB88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -155,6 +158,7 @@
 				4334EA7C2AD1C26000A4BB88 /* ContentView.swift */,
 				4334EA7E2AD1C26200A4BB88 /* Assets.xcassets */,
 				4334EA802AD1C26200A4BB88 /* Preview Content */,
+				1D908F2C2AD23FED00645943 /* AppGroupUserDefaults.swift */,
 			);
 			path = NJTransit;
 			sourceTree = "<group>";
@@ -369,6 +373,7 @@
 			files = (
 				4334EABA2AD1C28000A4BB88 /* NJTransitWidget.intentdefinition in Sources */,
 				4334EA7D2AD1C26000A4BB88 /* ContentView.swift in Sources */,
+				1D908F2D2AD23FED00645943 /* AppGroupUserDefaults.swift in Sources */,
 				4334EA7B2AD1C26000A4BB88 /* NJTransitApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +403,7 @@
 				4334EAB22AD1C27D00A4BB88 /* NJTransitWidgetLiveActivity.swift in Sources */,
 				4334EAB02AD1C27D00A4BB88 /* NJTransitWidgetBundle.swift in Sources */,
 				4334EAB42AD1C27D00A4BB88 /* NJTransitWidget.swift in Sources */,
+				1D908F2E2AD23FED00645943 /* AppGroupUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

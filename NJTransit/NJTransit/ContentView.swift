@@ -11,10 +11,15 @@ import SwiftUI
 
 struct ContentView: View {
     // Need these 3 string variables to be passed into the widget
-    @State public var selectedTravelFrom = ""
-    @State public var selectedTravelTo = ""
-    @State public var selectedBoardingTime = ""
+    @AppStorage(AppGroupUserDefaults.StorageKey.travelFrom) 
+    var selectedTravelFrom = ""
     
+    @AppStorage(AppGroupUserDefaults.StorageKey.travelTo)
+    var selectedTravelTo = ""
+    
+    @AppStorage(AppGroupUserDefaults.StorageKey.boardingTime)
+    var selectedBoardingTime = ""
+
     let travelFromOptions = ["New York Penn Station", "Secaucus Upper Lvl", "Newark Penn Station", "Newark Airport", "Metropark", "Metuchen", "Edison", "New Brunswick", "Princeton Junction", "Hamilton", "Trenton"]
     let travelToOptions = ["New York Penn Station", "Secaucus Upper Lvl", "Newark Penn Station", "Newark Airport", "Metropark", "Metuchen", "Edison", "New Brunswick", "Princeton Junction", "Hamilton", "Trenton"]
     let travelStart = ["12:00 PM", "1:00PM", "2:00PM", "3:00PM", "4:00PM", "5:00PM"]
